@@ -1,4 +1,10 @@
-import { app, BrowserWindow, globalShortcut, screen } from 'electron';
+import {
+  app,
+  BrowserWindow,
+  globalShortcut,
+  screen,
+  ipcMain
+} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -12,12 +18,19 @@ function createWindow() {
 
   // Create the browser window.
   win = new BrowserWindow({
+    // frame: false,
+    // resizable: false,
     x: 0,
     y: 0,
     width: size.width,
     height: size.height
   });
-
+  globalShortcut.register('1', () => {
+    win.webContents.send('global-shortcut', 0);
+  });
+  globalShortcut.register('2', () => {
+    win.webContents.send('global-shortcut', 1);
+  });
   if (serve) {
     require('electron-reload')(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)
@@ -43,6 +56,9 @@ function createWindow() {
     win = null;
   });
 }
+ipcMain.on('close-main-window', () => {
+  app.quit();
+});
 
 try {
   // This method will be called when Electron has finished
