@@ -7,8 +7,6 @@ import { ElectronService } from '../../providers/electron.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild(MatMenuTrigger)
-  trigger: MatMenuTrigger;
   sources: Array<Object>;
   constructor(private _electronService: ElectronService) {
     this.sources = [
@@ -31,8 +29,8 @@ export class HomeComponent implements OnInit {
   }
 
   openMenu() {
-    this.trigger.openMenu();
-    console.log('menu opened');
+    // this.trigger.openMenu();
+    // console.log('menu opened');
   }
   playAudio() {
     console.log('clicked');
