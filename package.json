@@ -34,7 +34,8 @@
     "@angular/animations": "^6.1.9",
     "@angular/cdk": "^6.4.7",
     "@angular/material": "^6.4.7",
-    "ngx-electron": "^1.0.4"
+    "ngx-electron": "^1.0.4",
+    "videogular2": "6.3.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.8.4",

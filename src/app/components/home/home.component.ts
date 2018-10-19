@@ -13,19 +13,19 @@ export class HomeComponent implements OnInit {
   constructor(private _electronService: ElectronService) {
     this.sources = [
       {
-        button: 'Clapping',
-        src: localStorage.audio1 || './assets/audio/clapping.mp3',
-        type: 'audio/mp3'
+        title: 'bell',
+        src: localStorage.audio1 || './assets/audio/bell-3.wav',
+        type: 'audio/wav'
       },
       {
-        button: 'Asdf',
-        src: localStorage.audio2 || './assets/audio/clapping.mp3',
-        type: 'audio/mp3'
+        title: 'compact car',
+        src: localStorage.audio2 || './assets/audio/compact-car-screeching.wav',
+        type: 'audio/wav'
       },
       {
-        button: 'And Another effect',
-        src: localStorage.audio3 || './assets/audio/clapping.mp3',
-        type: 'audio/mp3'
+        title: 'crowd awww',
+        src: localStorage.audio3 || './assets/audio/crowd-aww.wav',
+        type: 'audio/wav'
       }
     ];
   }
@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
     this.trigger.openMenu();
     console.log('menu opened');
   }
+  // TODO: refactor so playAudio knows which button or key was pressed
   playAudio() {
     console.log('clicked');
     const audio = new Audio();
