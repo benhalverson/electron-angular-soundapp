@@ -1,6 +1,7 @@
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="openMenu()">Settings</button>
+  <button class="nav-item nav-link-edit" mat-menu-item [routerLink]="['']">Main</button>
+  <button class="nav-item nav-link-edit" mat-menu-item [routerLink]="['settings']">Settings</button>
 </mat-menu>
 
 <div class="container">

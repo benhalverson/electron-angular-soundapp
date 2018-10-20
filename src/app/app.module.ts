@@ -19,7 +19,7 @@ import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { SettingsComponent } from './settings/settings.component';
+import { SettingsComponent } from './components/settings/settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
