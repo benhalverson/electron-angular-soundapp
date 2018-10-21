@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { TranslateModule } from '@ngx-translate/core';
+import { MatMenuTrigger } from '@angular/material';
+import { ElectronService } from '../../providers/electron.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,7 +12,6 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
       imports: [
-        TranslateModule.forRoot()
       ]
     })
     .compileComponents();
@@ -27,8 +27,8 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render Sound 1 in a button tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('PAGES.HOME.TITLE');
+    expect(compiled.querySelector('button').textContent).toContain('Sound 1');
   }));
 });

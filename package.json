@@ -1,6 +1,6 @@
 {
   "name": "sound-app",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "An app to play sound effects during a presentation with powerpoint",
   "homepage": "https://github.com/benhalverson/electron-angular-soundapp",
   "author": {
@@ -34,7 +34,8 @@
     "@angular/animations": "^6.1.9",
     "@angular/cdk": "^6.4.7",
     "@angular/material": "^6.4.7",
-    "ngx-electron": "^1.0.4"
+    "ngx-electron": "^1.0.4",
+    "videogular2": "6.3.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.8.4",
