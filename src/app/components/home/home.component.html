@@ -5,16 +5,28 @@
 </mat-menu>
 
 <div class="container">
-  <button mat-raised-button (click)="playAudio()">Sound 1</button>
-  <button mat-raised-button (click)="playAudio2()">Sound 2</button>
-  <button mat-raised-button (click)="playAudio3()">Sound 3</button>
-  <button mat-raised-button (click)="playAudio4()">Sound 4</button>
-  <button mat-raised-button (click)="playAudio5()">Sound 5</button>
-  <br />
-  <button mat-raised-button (click)="playAudio6()">Sound 6</button>
-  <button mat-raised-button (click)="playAudio7()">Sound 7</button>
-  <button mat-raised-button (click)="playAudio8()">Sound 8</button>
-  <button mat-raised-button (click)="playAudio9()">Sound 9</button>
-  <button mat-raised-button (click)="playAudio10()">Sound 10</button>
+  <!-- <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+  </mat-grid-list> -->
+  <div class="buttons">
+    <button mat-raised-button *ngFor="let item of playlist; let $index = index" (click)="onClickPLaylistItem(item, $index)">
+      {{ item.title }}
 
+    </button>
+  </div>
 </div>
+
+
+<vg-player style="height: 0px;">
+  <vg-controls>
+    <vg-play-pause></vg-play-pause>
+    <vg-playback-button></vg-playback-button>
+  </vg-controls>
+
+  <audio #media [vgMedia]="playlist" preload="auto">
+    <source *ngFor="let audio of playlist" [src]="audio.src" [type]="audio.type">
+  </audio>
+</vg-player>
