@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material';
 import { ElectronService } from '../../providers/electron.service';
 import { VgAPI } from 'videogular2/core';
 export interface IMedia {
@@ -100,7 +99,7 @@ export class HomeComponent implements OnInit {
     // console.log('menu opened');
   }
 
-  onPLayerReady(api: VgAPI) {
+  onPlayerReady(api: VgAPI): void {
     this.api = api;
     this.api
       .getDefaultMedia()
