@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VgAPI} from 'videogular2/core';
+import { VgAPI } from 'videogular2/core';
 export interface IMedia {
   title: string;
   src: string;
@@ -88,6 +88,11 @@ export class AudioPlayerComponent implements OnInit {
   currentItem: IMedia = this.playlist[ this.currentIndex ];
   api: VgAPI;
   public name: string;
+  controls: boolean = false;
+  autoplay: boolean = true;
+  loop: boolean = false;
+  preload: string = 'auto';
+
   constructor() { }
 
 
@@ -95,6 +100,18 @@ export class AudioPlayerComponent implements OnInit {
     this.currentIndex = index;
     this.currentItem = item;
   }
+
+  onPlayerReady(api: VgAPI) {
+    this.api = api;
+
+    this.api.getDefaultMedia().subscriptions.ended.subscribe(
+        () => {
+            // Set the video to the beginning
+            this.api.getDefaultMedia().currentTime = 0;
+        }
+    );
+
+}
 
   ngOnInit() {}
 }

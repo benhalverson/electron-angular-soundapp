@@ -1,22 +1,13 @@
-<ul>
-  <li *ngFor="let item of playlist; let $index = index" (click)="onClickPLaylistItem(item, $index)" [class.selected]="item === currentItem"
-    class="list-inline">
-    <span class="video-icon"><span i18n>Example</span> {{ item.title }}</span>
-    
-  </li>
-</ul>
-<vg-player>
-  <vg-overlay-play></vg-overlay-play>
-  <vg-buffering></vg-buffering>
+<div class="buttons">
+  <button mat-raised-button (click)="onClickPLaylistItem(item, $index); api.play()" *ngFor="let item of playlist; let $index = index" >
+    {{ item.title }}
 
-  <vg-scrub-bar>
-    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-  </vg-scrub-bar>
-
-  <vg-controls [vgAutohide]="true" [vgAutohideTime]="3.0">
+  </button>
+<vg-player (onPlayerReady)="onPlayerReady($event)">
+  
+  <vg-controls>
     <vg-play-pause></vg-play-pause>
 
   </vg-controls>
-  <video #media [vgMedia]="media" [src]="currentItem.src" id="modalPlayer" preload="none" crossorigin poster="{{currentItem.poster}}"></video>
+  <audio #media [vgMedia]="media" [src]="currentItem.src" id="modalPlayer" preload="none"></audio>
 </vg-player>
