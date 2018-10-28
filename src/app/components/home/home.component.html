@@ -5,27 +5,5 @@
 </mat-menu>
 
 <div class="container">
-  <!-- <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-  </mat-grid-list> -->
-  <div class="buttons">
-    <button mat-raised-button *ngFor="let item of playlist; let $index = index" (click)="onClickPLaylistItem(item, $index)">
-      {{ item.title }}
-
-    </button>
-  </div>
+  <app-audio-player></app-audio-player>
 </div>
-
-<vg-player style="height: 50px;" (onPlayerReady)="onPlayerReady($event)">
-  <vg-controls>
-    <vg-play-pause></vg-play-pause>
-    <vg-playback-button></vg-playback-button>
-  </vg-controls>
-
-  <audio #media [vgMedia]="playlist" preload="auto">
-    <source *ngFor="let audio of playlist" [src]="audio.src" [type]="audio.type">
-  </audio>
-</vg-player>
