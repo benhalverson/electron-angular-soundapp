@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.4.0](https://github.com/benhalverson/electron-angular-soundapp/compare/v0.3.0...v0.4.0) (2018-10-29)
+
+
+### Features
+
+* **keyboard shortcuts:** wip ([1fa6a50](https://github.com/benhalverson/electron-angular-soundapp/commit/1fa6a50))
+* **sfx:** added more sfx and added a stop button ([7c57558](https://github.com/benhalverson/electron-angular-soundapp/commit/7c57558))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [0.3.0](https://github.com/benhalverson/electron-angular-soundapp/compare/v0.2.1...v0.3.0) (2018-10-28)
 
 
