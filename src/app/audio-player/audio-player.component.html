@@ -1,13 +1,16 @@
 <div class="buttons">
-  <button mat-raised-button (click)="onClickPLaylistItem(item, $index); api.play()" *ngFor="let item of playlist; let $index = index" >
+  <button mat-raised-button (click)="onClickPLaylistItem(item, $index); api.play()" *ngFor="let item of playlist; let $index = index">
     {{ item.title }}
 
   </button>
-<vg-player (onPlayerReady)="onPlayerReady($event)">
-  
-  <vg-controls>
-    <vg-play-pause></vg-play-pause>
+  <vg-player (onPlayerReady)="onPlayerReady($event)">
 
-  </vg-controls>
-  <audio #media [vgMedia]="media" [src]="currentItem.src" id="modalPlayer" preload="none"></audio>
-</vg-player>
+    <vg-controls>
+      <vg-play-pause></vg-play-pause>
+
+    </vg-controls>
+    <audio #media [vgMedia]="media" [src]="currentItem.src" id="modalPlayer" preload="none"></audio>
+  </vg-player>
+  <button mat-raised-button class="stop" (click)="api.pause()">
+    Stop
+  </button>

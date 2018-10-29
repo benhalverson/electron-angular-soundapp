@@ -8,11 +8,11 @@ export interface IMedia {
 @Component({
   selector: 'app-audio-player',
   templateUrl: './audio-player.component.html',
-  styleUrls: ['./audio-player.component.css']
+  styleUrls: ['./audio-player.component.scss']
 })
 export class AudioPlayerComponent implements OnInit {
-  playlist: Array <IMedia> = [
-   {
+  playlist: Array<IMedia> = [
+    {
       title: 'Bell',
       src: './assets/audio/bell-3.wav',
       type: 'audio/wav'
@@ -85,7 +85,7 @@ export class AudioPlayerComponent implements OnInit {
   ];
 
   currentIndex = 0;
-  currentItem: IMedia = this.playlist[ this.currentIndex ];
+  currentItem: IMedia = this.playlist[this.currentIndex];
   api: VgAPI;
   public name: string;
   controls: boolean = false;
@@ -93,8 +93,7 @@ export class AudioPlayerComponent implements OnInit {
   loop: boolean = false;
   preload: string = 'auto';
 
-  constructor() { }
-
+  constructor() {}
 
   onClickPLaylistItem(item: IMedia, index: number) {
     this.currentIndex = index;
@@ -104,14 +103,11 @@ export class AudioPlayerComponent implements OnInit {
   onPlayerReady(api: VgAPI) {
     this.api = api;
 
-    this.api.getDefaultMedia().subscriptions.ended.subscribe(
-        () => {
-            // Set the video to the beginning
-            this.api.getDefaultMedia().currentTime = 0;
-        }
-    );
-
-}
+    this.api.getDefaultMedia().subscriptions.ended.subscribe(() => {
+      // Set the video to the beginning
+      this.api.getDefaultMedia().currentTime = 0;
+    });
+  }
 
   ngOnInit() {}
 }
