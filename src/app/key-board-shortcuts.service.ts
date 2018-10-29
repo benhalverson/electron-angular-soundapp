@@ -5,6 +5,19 @@ import { VgAPI } from 'videogular2/core';
 })
 export class KeyBoardShortcutsService {
   constructor() {}
-  // pressedKey;
-  // api: VgAPI;
+  pressedKey;
+  api: VgAPI;
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent($event) {
+    this.pressedKey = $event.key;
+    if ($event.key === '0' || '1') {
+      console.log(`key ${$event.key}`);
+      // this.api.play();
+    }
+    if ($event.key === 's') {
+      this.api.pause();
+    }
+    // if(event.key === 1 - 9) play sound
+    // if(event.key === 's') stop sound
+  }
 }

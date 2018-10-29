@@ -22,7 +22,7 @@ import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from 'videogular2/buffering';
 import { AudioPlayerComponent } from './audio-player/audio-player.component';
-// import { KeyBoardShortcutsService } from './key-board-shortcuts.service';
+import { KeyBoardShortcutsService } from './key-board-shortcuts.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,10 +47,7 @@ import { AudioPlayerComponent } from './audio-player/audio-player.component';
     VgOverlayPlayModule,
     VgBufferingModule
   ],
-  providers: [
-    ElectronService
-    // KeyBoardShortcutsService
-  ],
+  providers: [ElectronService, KeyBoardShortcutsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

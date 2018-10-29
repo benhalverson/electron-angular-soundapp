@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ElectronService } from '../../providers/electron.service';
-// import { KeyBoardShortcutsService } from '../../key-board-shortcuts.service';
+import { KeyBoardShortcutsService } from '../../key-board-shortcuts.service';
 import { VgAPI } from 'videogular2/core';
 @Component({
   selector: 'app-home',
@@ -9,7 +9,8 @@ import { VgAPI } from 'videogular2/core';
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private _electronService: ElectronService // private _keyboardShortcuts: KeyBoardShortcutsService
+    private _electronService: ElectronService,
+    private _keyboardShortcuts: KeyBoardShortcutsService
   ) {}
   pressedKey;
   api: VgAPI;
@@ -27,7 +28,7 @@ export class HomeComponent implements OnInit {
     // if(event.key === 's') stop sound
   }
   ngOnInit() {
-    this.handleKeyboardEvent(Event);
-    // this._keyboardShortcuts.handleKeyboardEvent(Event);
+    // this.handleKeyboardEvent(Event);
+    this._keyboardShortcuts.handleKeyboardEvent(Event);
   }
 }
