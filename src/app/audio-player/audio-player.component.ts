@@ -17,7 +17,8 @@ export class AudioPlayerComponent implements OnInit {
     {
       title: 'Bell',
       src: './assets/audio/bell-3.wav',
-      type: 'audio/wav'
+      type: 'audio/wav',
+      category: 'good'
     },
     {
       title: 'Car Screech',
@@ -33,7 +34,7 @@ export class AudioPlayerComponent implements OnInit {
       title: 'Crowd bravo',
       src: './assets/audio/crowd-bravo.wav',
       type: 'audio/wav',
-      category: 'Great'
+      category: 'Good'
     },
     {
       title: 'Count down',
@@ -129,6 +130,21 @@ export class AudioPlayerComponent implements OnInit {
     {
       title: 'Boooing',
       src: './assets/audio/short-booings.wav',
+      type: 'audio/wav'
+    },
+    {
+      title: 'Crowd Laugh Long',
+      src: './assets/audio/crowd-laugh-long.wav',
+      type: 'audio/wav'
+    },
+    {
+      title: 'Crowd Laugh Short',
+      src: './assets/audio/crowd-laugh-short.wav',
+      type: 'audio/wav'
+    },
+    {
+      title: 'Evil Laugh',
+      src: './assets/audio/evil-laugh.wav',
       type: 'audio/wav'
     }
   ];

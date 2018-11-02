@@ -1,3 +1,14 @@
+<!-- <table *ngFor="let item of playlist; let $index = index">
+  <th>{{ item.category }}</th>
+  <tr>
+    <td>
+      <button mat-raised-button (click)="onClickPLaylistItem(item, $index); api.play()" *ngFor="let item of playlist; let $index = index">
+        {{ item.title }}
+
+      </button>
+    </td>
+  </tr>
+</table> -->
 <div class="buttons">
   <button mat-raised-button (click)="onClickPLaylistItem(item, $index); api.play()" *ngFor="let item of playlist; let $index = index">
     {{ item.title }}
