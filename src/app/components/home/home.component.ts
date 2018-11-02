@@ -15,10 +15,10 @@ export class HomeComponent implements OnInit {
 
   pressedKey;
   api: VgAPI;
-  public pingPong(): void {
-    const pong: string = this._electronService.ipcRenderer.sendSync('ping');
-    console.log('pong', pong);
-  }
+  // public pingPong(): void {
+  //   const pong: string = this._electronService.ipcRenderer.sendSync('ping');
+  //   console.log('pong', pong);
+  // }
 
   // public beep() {
   //   this._electronService.shell.beep();
@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // this.handleKeyboardEvent(Event);
     this._keyboardShortcuts.handleKeyboardEvent(Event);
-    this._electronService.ipcRenderer.sendSync('test');
+    // this._electronService.ipcRenderer.sendSync('test');
+    // this.pingPong();
   }
 }

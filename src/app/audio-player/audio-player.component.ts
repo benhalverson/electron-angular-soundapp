@@ -6,6 +6,7 @@ export interface IMedia {
   src: string;
   type: string;
   category?: string;
+  key?: string;
 }
 @Component({
   selector: 'app-audio-player',
@@ -18,12 +19,14 @@ export class AudioPlayerComponent implements OnInit {
       title: 'Bell',
       src: './assets/audio/bell-3.wav',
       type: 'audio/wav',
-      category: 'good'
+      category: 'good',
+      key: '0'
     },
     {
       title: 'Car Screech',
       src: './assets/audio/compact-car-screeching.wav',
-      type: 'audio/wav'
+      type: 'audio/wav',
+      key: '1'
     },
     {
       title: 'Crowd awww',
