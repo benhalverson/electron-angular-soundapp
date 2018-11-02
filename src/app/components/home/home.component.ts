@@ -12,8 +12,17 @@ export class HomeComponent implements OnInit {
     private _electronService: ElectronService,
     private _keyboardShortcuts: KeyBoardShortcutsService
   ) {}
+
   pressedKey;
   api: VgAPI;
+  public pingPong(): void {
+    const pong: string = this._electronService.ipcRenderer.sendSync('ping');
+    console.log('pong', pong);
+  }
+
+  // public beep() {
+  //   this._electronService.shell.beep();
+  // }
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent($event) {
     this.pressedKey = $event.key;
@@ -30,5 +39,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // this.handleKeyboardEvent(Event);
     this._keyboardShortcuts.handleKeyboardEvent(Event);
+    this._electronService.ipcRenderer.sendSync('test');
   }
 }
